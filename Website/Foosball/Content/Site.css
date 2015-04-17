@@ -259,6 +259,9 @@ header {
 .hidescroll {
   overflow: hidden;
 }
+.modal-section {
+  margin: 15px;
+}
 /* Call to Action */
 .call-to-action {
   padding: 50px 0;

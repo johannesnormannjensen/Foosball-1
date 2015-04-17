@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace StudentCatalogMVC.Models.Repositories
+namespace Foosball.Models.Repositories
 {
     public interface IGenericRepository<T> where T : class
     {

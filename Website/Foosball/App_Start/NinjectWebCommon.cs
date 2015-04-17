@@ -1,6 +1,5 @@
 using Foosball.Models.FoosballClasses;
 using Foosball.Models.Repositories;
-using StudentCatalogMVC.Models.Repositories;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Foosball.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Foosball.App_Start.NinjectWebCommon), "Stop")]
@@ -66,6 +65,7 @@ namespace Foosball.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IGenericRepository<Player>>().To<GenericRepository<Player>>();
+            kernel.Bind<IGenericRepository<Match>>().To<GenericRepository<Match>>();
          
         }        
     }
