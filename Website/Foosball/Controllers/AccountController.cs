@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Foosball.Models;
 using Foosball.Models.FoosballClasses;
-using StudentCatalogMVC.Models.Repositories;
+using Foosball.Models.Repositories;
 
 namespace Foosball.Controllers
 {
@@ -75,7 +75,7 @@ namespace Foosball.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return RedirectToAction("Index", "Home");
             }
 
             // This doesn't count login failures towards account lockout
@@ -92,7 +92,7 @@ namespace Foosball.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+                    return RedirectToAction("Index", "Home");
             }
         }
 
@@ -175,7 +175,7 @@ namespace Foosball.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return RedirectToAction("Index", "Home");
         }
 
         //

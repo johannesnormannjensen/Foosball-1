@@ -22,7 +22,14 @@ namespace Foosball.Models.FoosballClasses
         [Required]
         public bool[] Confirmations;
 
-        public bool IsConfirmed { get { return !Confirmations.Where(x => !x).Any(); } } //is true if there is no x that is false
+        public bool IsConfirmed
+        {
+            get
+            {
+                if (Confirmations != null) return !Confirmations.Where(x => !x).Any();
+                return false;
+            }
+        } //is true if there is no x that is false
 
         public Match() { }
 

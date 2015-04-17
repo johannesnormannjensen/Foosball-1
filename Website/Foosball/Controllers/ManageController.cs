@@ -9,7 +9,6 @@ using Microsoft.Owin.Security;
 using Foosball.Models;
 using Foosball.Models.FoosballClasses;
 using Foosball.Models.Repositories;
-using StudentCatalogMVC.Models.Repositories;
 
 namespace Foosball.Controllers
 {
