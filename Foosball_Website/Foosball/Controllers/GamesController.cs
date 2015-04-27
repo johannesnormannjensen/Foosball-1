@@ -53,8 +53,6 @@ namespace Foosball.Controllers
         public ActionResult Create([Bind(Include = "Id,LocationId,Date")] Game game)
         {
             int[] ids = Request["PlayerId"].Split(',').Select(Int32.Parse).ToArray();
-            int a = db.Games.Count();
-            Game gamer = db.Games.ToList().Last();
             int lastGameId = !db.Games.Any() ? 0 : db.Games.ToList().Last().Id;
 
             game.PlayerGames = new List<PlayerGame>();

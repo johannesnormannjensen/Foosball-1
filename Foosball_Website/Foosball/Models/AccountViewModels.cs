@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Foosball.Models.FoosballModels;
 
 namespace Foosball.Models
 {
@@ -79,6 +80,20 @@ namespace Foosball.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        /* private Player _player;
+         public Player Player
+         {
+             get { return _player ?? new Player(); }
+             set { _player = value; }
+         }*/
+
+        public Player Player { get; set; }
+
+        public RegisterViewModel()
+        {
+            Player = new Player();
+        }
     }
 
     public class ResetPasswordViewModel

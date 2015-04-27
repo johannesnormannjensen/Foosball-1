@@ -14,5 +14,9 @@ namespace Foosball.Models.FoosballModels
 
         public virtual ICollection<PlayerGame> PlayerGames { get; set; }
 
+        public Player()
+        {
+            Elo = 1400;
+        }
     }
 }

@@ -20,14 +20,17 @@ namespace Foosball.Controllers
             return View(db.Players.ToList());
         }
 
+
         // GET: Players/Details/5
-        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+                Player p = db.Players.ToList().First(x => x.ApplicationUserId == User.Identity.GetUserId());
+                return View(p);
             }
+
             Player player = db.Players.Find(id);
             if (player == null)
             {
