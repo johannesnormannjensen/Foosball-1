@@ -42,7 +42,8 @@ namespace Foosball.Controllers
         {
             ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
             ViewBag.PlayerId = new SelectList(db.Players, "Id", "Username");
-            return View();
+            var game = new Game();
+            return View(game);
         }
 
         // POST: Games/Create
@@ -50,9 +51,9 @@ namespace Foosball.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LocationId,Date")] Game game)
+        public ActionResult Create(Game game)
         {
-            int[] ids = Request["PlayerId"].Split(',').Select(Int32.Parse).ToArray();
+           /* int[] ids = Request["PlayerId"].Split(',').Select(Int32.Parse).ToArray();
             int lastGameId = !db.Games.Any() ? 0 : db.Games.ToList().Last().Id;
 
             game.PlayerGames = new List<PlayerGame>();
@@ -61,7 +62,7 @@ namespace Foosball.Controllers
             foreach (int t in ids)
                 game.PlayerGames.Add(new PlayerGame { GameId = lastGameId + 1, PlayerId = t });
 
-
+            */
 
             if (ModelState.IsValid)
             {

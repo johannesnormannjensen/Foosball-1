@@ -1,4 +1,5 @@
-﻿@model Foosball.Models.FoosballModels.Game
+﻿@using Foosball.Models.FoosballModels
+@model Foosball.Models.FoosballModels.Game
 
 @{
     ViewBag.Title = "Create";
@@ -30,16 +31,29 @@
                 @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
             </div>
         </div>
-        @for (int i = 0; i < 4; i++)
-        {
-            <div class="form-group">
-                @Html.LabelFor(model => model.PlayerGames.First().Player, "PlayerId", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("PlayerId", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.PlayerGames.First().Player, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        }
+
+        <div class="form-group">
+
+
+            <input id="btnAddPlayerGame" type="button"
+                   onclick=" addRow(); " value="Add Player" />
+
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        PlayerId
+                    </td>
+                    <td>
+                        GameId
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="tbBooks"></tbody>
+        </table>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -52,7 +66,30 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+<script language="javascript" type="text/javascript">
+    function addRow() {
 
+        @{
+                Model.PlayerGames.Add(new PlayerGame());
+            }
+
+        var index = $("#tbBooks").children("tr").length;
+
+        var indexCell = "<td style='display:none'><input name='PlayerGames.Index' type='hidden' value='" + index + "' /></td>";
+        var playerIdCell = "<td><input id='PlayerGame_" + index + "__PlayerId' name='PlayerGames[" + index + "].PlayerId' type='text' value='' /></td>";
+        var gameIdCell = "<td><input id='PlayerGame_" + index + "__GameId'name='PlayerGames[" + index + "].GameId' type='text' value='' /></td>";
+        var removeCell = "<td><input id='btnAddPlayerGame' type='button'value='Remove' onclick='removeRow(" + index + ");' /></td>";
+
+        var newRow = "<tr id='trPlayerGame" + index + "'>" +
+        indexCell + playerIdCell + gameIdCell + removeCell + "</tr>";
+        $("#tbBooks").append(newRow);
+    }
+
+    function removeRow(id) {
+        var controlToBeRemoved = "#trPlayerGame" + id;
+        $(controlToBeRemoved).remove();
+    }
+</script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

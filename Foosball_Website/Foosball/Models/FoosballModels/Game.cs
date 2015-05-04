@@ -15,6 +15,9 @@ namespace Foosball.Models.FoosballModels
         public virtual Location Location { get; set; }
         public virtual ICollection<PlayerGame> PlayerGames { get; set; }
 
-
+        public Game()
+        {
+            PlayerGames = PlayerGames ?? new List<PlayerGame>();
+        }
     }
 }
