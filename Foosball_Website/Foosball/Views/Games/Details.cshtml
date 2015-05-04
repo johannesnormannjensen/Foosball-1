@@ -38,11 +38,26 @@
             </dd>
 
             <dt>
+                @Html.DisplayNameFor(model => playerGame.IsWin)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => playerGame.IsWin)
+    </dd>
+            <dt>
                 @Html.DisplayNameFor(model => playerGame.Player.Elo)
             </dt>
 
             <dd>
                 @Html.DisplayFor(model => playerGame.Player.Elo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => playerGame.IsConfirmed)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => playerGame.IsConfirmed)
             </dd>
         }
 
