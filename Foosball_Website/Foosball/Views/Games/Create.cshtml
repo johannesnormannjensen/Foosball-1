@@ -48,7 +48,7 @@
                 @*names all the lists PlayerId, but the first param is necessary so that it finds the list of players from the viewbag
                 suggestions are welcomed for prettier solution*@
             </div><div class="col-md-2">
-                @Html.CheckBoxFor(model => playerGames[i].IsWin);@*keep in mind, that toList() loses the reference*@
+                @Html.CheckBoxFor(model => playerGames[i].IsWin)@*keep in mind, that toList() loses the reference*@
             </div>
         </div>
     }

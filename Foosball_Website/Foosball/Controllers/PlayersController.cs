@@ -68,6 +68,13 @@ namespace Foosball.Controllers
         }
 
         // GET: Players/Edit/5
+        public ActionResult MyProfile()
+        {
+            Player p = db.Players.ToList().First(x => x.ApplicationUserId == User.Identity.GetUserId());
+              
+            return View(p);
+        }
+
         public ActionResult Edit(int? id)
         {
             if (id == null)

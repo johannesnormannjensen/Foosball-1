@@ -254,6 +254,8 @@
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
     <Content Include="Views\Players\UsernameEditor.cshtml" />
+    <Content Include="Views\Players\MyProfile.cshtml" />
+    <Content Include="Views\Games\NakedGameDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
