@@ -54,11 +54,7 @@ namespace Foosball.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Game game)
         {
-           
-            game.PlayerGames =
-                game.PlayerGames.Select(
-                    x => new PlayerGame() { Game = game,GameId = LastGameId + 1, PlayerId = x.PlayerId}).ToList();
-
+            game.Date = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Games.Add(game);

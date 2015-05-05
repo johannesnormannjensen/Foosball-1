@@ -29,21 +29,14 @@
 
         @foreach (PlayerGame playerGame in Model.PlayerGames)
         {
-            <dt>
+            <dt class="details-username">
                 @Html.DisplayNameFor(model => playerGame.Player.Username)
             </dt>
 
-            <dd>
+            string style = !playerGame.IsWin ? "text-success" : "text-danger";
+            <dd class="details-username @style">
                 @Html.DisplayFor(model => playerGame.Player.Username)
             </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => playerGame.IsWin)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => playerGame.IsWin)
-    </dd>
             <dt>
                 @Html.DisplayNameFor(model => playerGame.Player.Elo)
             </dt>

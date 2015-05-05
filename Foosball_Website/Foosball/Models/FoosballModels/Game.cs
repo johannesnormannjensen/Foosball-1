@@ -17,7 +17,7 @@ namespace Foosball.Models.FoosballModels
 
         public Game()
         {
-            PlayerGames = PlayerGames ?? new List<PlayerGame>();
+            PlayerGames = PlayerGames ?? new List<PlayerGame>() { };
         }
     }
 }

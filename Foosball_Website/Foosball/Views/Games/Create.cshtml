@@ -1,4 +1,5 @@
-﻿@using Foosball.Models.FoosballModels
+﻿@using System.Linq
+@using Foosball.Models.FoosballModels
 @model Foosball.Models.FoosballModels.Game
 
 @{
@@ -32,27 +33,27 @@
             </div>
         </div>
 
+        @{
+    SelectList sl = ViewBag.HumanSelection;
+
+    List<PlayerGame> playerGames = new List<PlayerGame>();
+    Model.PlayerGames = playerGames;@*needed for the checkboxbinding, see lower*@
+    for (int i = 0; i < 4; i++)
+    {
+        playerGames.Add(new PlayerGame());
         <div class="form-group">
-
-
-            <input id="btnAddPlayerGame" type="button"
-                   onclick=" addRow(); " value="Add Player" />
-
+            @Html.LabelFor(model => model.PlayerGames.First().Player.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.DropDownList("PlayerId", sl, htmlAttributes: new { @class = "form-control" })
+                @*names all the lists PlayerId, but the first param is necessary so that it finds the list of players from the viewbag
+                suggestions are welcomed for prettier solution*@
+            </div><div class="col-md-2">
+                @Html.CheckBoxFor(model => playerGames[i].IsWin);@*keep in mind, that toList() loses the reference*@
+            </div>
         </div>
+    }
+        }
 
-        <table>
-            <thead>
-                <tr>
-                    <td>
-                        PlayerId
-                    </td>
-                    <td>
-                        GameId
-                    </td>
-                </tr>
-            </thead>
-            <tbody id="tbBooks"></tbody>
-        </table>
 
 
         <div class="form-group">
@@ -66,30 +67,9 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-<script language="javascript" type="text/javascript">
-    function addRow() {
 
-        @{
-                Model.PlayerGames.Add(new PlayerGame());
-            }
-
-        var index = $("#tbBooks").children("tr").length;
-
-        var indexCell = "<td style='display:none'><input name='PlayerGames.Index' type='hidden' value='" + index + "' /></td>";
-        var playerIdCell = "<td><input id='PlayerGame_" + index + "__PlayerId' name='PlayerGames[" + index + "].PlayerId' type='text' value='' /></td>";
-        var gameIdCell = "<td><input id='PlayerGame_" + index + "__GameId'name='PlayerGames[" + index + "].GameId' type='text' value='' /></td>";
-        var removeCell = "<td><input id='btnAddPlayerGame' type='button'value='Remove' onclick='removeRow(" + index + ");' /></td>";
-
-        var newRow = "<tr id='trPlayerGame" + index + "'>" +
-        indexCell + playerIdCell + gameIdCell + removeCell + "</tr>";
-        $("#tbBooks").append(newRow);
-    }
-
-    function removeRow(id) {
-        var controlToBeRemoved = "#trPlayerGame" + id;
-        $(controlToBeRemoved).remove();
-    }
-</script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/viewjavascript") @*initialized in bundleconfig.cs, this bundle contains the js file that is responsible
+        for renaming the dropdownlists for the purpose of binding*@
 }
