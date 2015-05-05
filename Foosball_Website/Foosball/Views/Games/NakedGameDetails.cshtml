@@ -26,7 +26,7 @@
                 @Html.DisplayNameFor(model => playerGame.Player.Username)
             </dt>
 
-            string style = playerGame.IsWin ? "text-danger" : "text-success";
+            string style = playerGame.IsWin ? "text-success" : "text-danger";
             <dd class="details-username @style">
                 @Html.DisplayFor(model => playerGame.Player.Username)
             </dd>
