@@ -14,6 +14,7 @@ namespace Foosball.Controllers
     public class GamesController : Controller
     {
         private FoosballDbContext db = new FoosballDbContext();
+        private int LastGameId { get { return !db.Games.Any() ? 0 : db.Games.ToList().Last().Id; } }
 
         // GET: Games
         public ActionResult Index()
@@ -53,16 +54,10 @@ namespace Foosball.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Game game)
         {
-           /* int[] ids = Request["PlayerId"].Split(',').Select(Int32.Parse).ToArray();
-            int lastGameId = !db.Games.Any() ? 0 : db.Games.ToList().Last().Id;
-
-            game.PlayerGames = new List<PlayerGame>();
-
-
-            foreach (int t in ids)
-                game.PlayerGames.Add(new PlayerGame { GameId = lastGameId + 1, PlayerId = t });
-
-            */
+           
+            game.PlayerGames =
+                game.PlayerGames.Select(
+                    x => new PlayerGame() { Game = game,GameId = LastGameId + 1, PlayerId = x.PlayerId}).ToList();
 
             if (ModelState.IsValid)
             {
