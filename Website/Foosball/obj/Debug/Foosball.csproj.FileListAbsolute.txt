@@ -1,0 +1,220 @@
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\obj\Debug\Foosball.csprojResolveAssemblyReference.cache
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\obj\Debug\DemoDemo.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\obj\Debug\DemoDemo.pdb
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\DemoDemo.dll.config
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\DemoDemo.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\DemoDemo.pdb
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Antlr3.Runtime.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\EntityFramework.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\EntityFramework.SqlServer.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Newtonsoft.Json.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Owin.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.Helpers.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.Mvc.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.Optimization.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.Razor.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.WebPages.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\WebGrease.dll
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\EntityFramework.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\EntityFramework.SqlServer.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.Helpers.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.Mvc.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.Optimization.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.Razor.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.WebPages.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Antlr3.Runtime.pdb
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Newtonsoft.Json.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Ferenc\Documents\visual studio 2013\Projects\Foosball\DemoDemo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Foosball.dll.config
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Foosball.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Foosball.pdb
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Antlr3.Runtime.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\EntityFramework.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\EntityFramework.SqlServer.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Newtonsoft.Json.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Owin.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.Helpers.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.Mvc.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.Optimization.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.Razor.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.WebPages.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\WebGrease.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\EntityFramework.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\EntityFramework.SqlServer.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.Helpers.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.Mvc.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.Optimization.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.Razor.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.WebPages.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Antlr3.Runtime.pdb
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Newtonsoft.Json.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\obj\Debug\Foosball.csprojResolveAssemblyReference.cache
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\obj\Debug\Foosball.dll
+C:\Users\Ferenc\Documents\Visual Studio 2013\Projects\Foosball\Foosball\obj\Debug\Foosball.pdb
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Foosball.dll.config
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Foosball.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Foosball.pdb
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Antlr3.Runtime.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\EntityFramework.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\EntityFramework.SqlServer.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.AspNet.Identity.Core.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.Cookies.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.Facebook.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.Google.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.OAuth.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.Twitter.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Web.Infrastructure.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Newtonsoft.Json.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Owin.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.Helpers.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.Mvc.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.Optimization.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.Razor.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.WebPages.Deployment.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.WebPages.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.WebPages.Razor.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\WebGrease.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\EntityFramework.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\EntityFramework.SqlServer.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.Helpers.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.Mvc.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.Optimization.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.Razor.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.WebPages.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.WebPages.Deployment.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\System.Web.WebPages.Razor.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Antlr3.Runtime.pdb
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Newtonsoft.Json.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.AspNet.Identity.Core.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.Facebook.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.Cookies.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.OAuth.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.Google.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.Twitter.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\obj\Debug\Foosball.csprojResolveAssemblyReference.cache
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\obj\Debug\Foosball.dll
+E:\GitProjects\Foosball_4Sem\Foosball_Website\Foosball\obj\Debug\Foosball.pdb
+C:\Foosball\Website\Foosball\obj\Debug\Foosball.csprojResolveAssemblyReference.cache
+C:\Foosball\Website\Foosball\bin\Foosball.dll.config
+C:\Foosball\Website\Foosball\bin\Foosball.dll
+C:\Foosball\Website\Foosball\bin\Foosball.pdb
+C:\Foosball\Website\Foosball\bin\Antlr3.Runtime.dll
+C:\Foosball\Website\Foosball\bin\EntityFramework.dll
+C:\Foosball\Website\Foosball\bin\EntityFramework.SqlServer.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.Google.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Foosball\Website\Foosball\bin\Microsoft.Web.Infrastructure.dll
+C:\Foosball\Website\Foosball\bin\Newtonsoft.Json.dll
+C:\Foosball\Website\Foosball\bin\Owin.dll
+C:\Foosball\Website\Foosball\bin\System.Web.Helpers.dll
+C:\Foosball\Website\Foosball\bin\System.Web.Mvc.dll
+C:\Foosball\Website\Foosball\bin\System.Web.Optimization.dll
+C:\Foosball\Website\Foosball\bin\System.Web.Razor.dll
+C:\Foosball\Website\Foosball\bin\System.Web.WebPages.Deployment.dll
+C:\Foosball\Website\Foosball\bin\System.Web.WebPages.dll
+C:\Foosball\Website\Foosball\bin\System.Web.WebPages.Razor.dll
+C:\Foosball\Website\Foosball\bin\WebGrease.dll
+C:\Foosball\Website\Foosball\bin\EntityFramework.xml
+C:\Foosball\Website\Foosball\bin\EntityFramework.SqlServer.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Foosball\Website\Foosball\bin\System.Web.Helpers.xml
+C:\Foosball\Website\Foosball\bin\System.Web.Mvc.xml
+C:\Foosball\Website\Foosball\bin\System.Web.Optimization.xml
+C:\Foosball\Website\Foosball\bin\System.Web.Razor.xml
+C:\Foosball\Website\Foosball\bin\System.Web.WebPages.xml
+C:\Foosball\Website\Foosball\bin\System.Web.WebPages.Deployment.xml
+C:\Foosball\Website\Foosball\bin\System.Web.WebPages.Razor.xml
+C:\Foosball\Website\Foosball\bin\Antlr3.Runtime.pdb
+C:\Foosball\Website\Foosball\bin\Newtonsoft.Json.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.Google.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Foosball\Website\Foosball\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Foosball\Website\Foosball\obj\Debug\Foosball.dll
+C:\Foosball\Website\Foosball\obj\Debug\Foosball.pdb
