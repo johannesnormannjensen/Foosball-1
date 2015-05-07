@@ -1,0 +1,15 @@
+﻿@using Foosball.Models.FoosballModels
+@model Foosball.Models.FoosballModels.Player
+
+@{
+    ViewBag.Title = "My Profile";
+
+}
+
+<h2>My Profile</h2>
+
+
+@foreach (PlayerGame playerGame in Model.PlayerGames)
+{
+    @Html.Partial("~/Views/Games/NakedGameDetails.cshtml", playerGame.Game)
+}

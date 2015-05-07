@@ -1,0 +1,75 @@
+﻿@using System.Linq
+@using Foosball.Models.FoosballModels
+@model Foosball.Models.FoosballModels.Game
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Game</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.LocationId, "LocationId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("LocationId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.LocationId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @{
+    SelectList sl = ViewBag.HumanSelection;
+
+    List<PlayerGame> playerGames = new List<PlayerGame>();
+    Model.PlayerGames = playerGames;@*needed for the checkboxbinding, see lower*@
+    for (int i = 0; i < 4; i++)
+    {
+        playerGames.Add(new PlayerGame());
+        <div class="form-group">
+            @Html.LabelFor(model => model.PlayerGames.First().Player.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.DropDownList("PlayerId", sl, htmlAttributes: new { @class = "form-control" })
+                @*names all the lists PlayerId, but the first param is necessary so that it finds the list of players from the viewbag
+                suggestions are welcomed for prettier solution*@
+            </div><div class="col-md-2">
+                @Html.CheckBoxFor(model => playerGames[i].IsWin)@*keep in mind, that toList() loses the reference*@
+            </div>
+        </div>
+    }
+        }
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/viewjavascript") @*initialized in bundleconfig.cs, this bundle contains the js file that is responsible
+        for renaming the dropdownlists for the purpose of binding*@
+}
