@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Foosball.DAL;
 using Foosball.Models.FoosballModels;
+using Microsoft.AspNet.Identity;
 
 namespace Foosball.Controllers
 {
@@ -39,6 +40,7 @@ namespace Foosball.Controllers
         }
 
         // GET: Games/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
@@ -50,10 +52,17 @@ namespace Foosball.Controllers
         // POST: Games/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Game game)
+        public ActionResult Create([Bind(Include = "Id,LocationId,Date,Playergames,Playergame.IsConfirmed")]Game game)
         {
+
+            Player loggedInPlayer = db.Players.ToList().First(x => x.ApplicationUserId == User.Identity.GetUserId());
+            foreach (PlayerGame playerGame in game.PlayerGames)
+            {
+                playerGame.IsConfirmed = playerGame.PlayerId == loggedInPlayer.Id;
+            }
             game.Date = DateTime.Now;
             if (ModelState.IsValid)
             {
@@ -62,7 +71,7 @@ namespace Foosball.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name", game.LocationId);
+            //  ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name", game.LocationId);
             return View(game);
         }
 

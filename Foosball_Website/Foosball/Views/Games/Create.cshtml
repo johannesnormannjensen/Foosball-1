@@ -44,9 +44,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PlayerGames.First().Player.Username, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-8">
-                @Html.DropDownList("PlayerId", sl, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(x => ((List<PlayerGame>)x.PlayerGames)[i].PlayerId, (IEnumerable<SelectListItem>)ViewBag.PlayerId, 
+                 new
+           {
+               Class = "form-control",
+               Id = "PlayerGames[" + i + "].PlayerId",
+               Name = "PlayerGames[" + i + "].PlayerId"
+           })
                 @*names all the lists PlayerId, but the first param is necessary so that it finds the list of players from the viewbag
-                suggestions are welcomed for prettier solution*@
+                    suggestions are welcomed for prettier solution*@
             </div><div class="col-md-2">
                 @Html.CheckBoxFor(model => playerGames[i].IsWin)@*keep in mind, that toList() loses the reference*@
             </div>
@@ -70,6 +76,6 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/viewjavascript") @*initialized in bundleconfig.cs, this bundle contains the js file that is responsible
+    @*initialized in bundleconfig.cs, this bundle contains the js file that is responsible
         for renaming the dropdownlists for the purpose of binding*@
 }
