@@ -58,7 +58,7 @@ namespace Foosball.Controllers
         public ActionResult Create([Bind(Include = "Id,LocationId,Date,Playergames,Playergame.IsConfirmed")]Game game)
         {
 
-            Player loggedInPlayer = db.Players.ToList().First(x => x.ApplicationUserId == User.Identity.GetUserId());
+            Player loggedInPlayer = LoggedInPlayer();
             foreach (PlayerGame playerGame in game.PlayerGames)
             {
                 playerGame.IsConfirmed = playerGame.PlayerId == loggedInPlayer.Id;
@@ -74,6 +74,8 @@ namespace Foosball.Controllers
             //  ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name", game.LocationId);
             return View(game);
         }
+
+
 
         // GET: Games/Edit/5
         public ActionResult Edit(int? id)
@@ -133,6 +135,21 @@ namespace Foosball.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public JsonResult Confirm(int gameId)
+        {
+            Game game = db.Games.ToList().First(x => x.Id == gameId);
+            if (ModelState.IsValid && game.HasThisPlayer(LoggedInPlayer()))
+            {
+                game.PlayerConfirm(LoggedInPlayer());
+                db.SaveChanges();
+                return Json(true);
+            }
+
+            return Json(false);
+        }
 
         protected override void Dispose(bool disposing)
         {
@@ -141,6 +158,15 @@ namespace Foosball.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private bool isUserThisPlayer(Player p)
+        {
+            return p.ApplicationUserId == User.Identity.GetUserId();
+        }
+        private Player LoggedInPlayer()
+        {
+            return db.Players.ToList().First(x => x.ApplicationUserId == User.Identity.GetUserId());
         }
     }
 }

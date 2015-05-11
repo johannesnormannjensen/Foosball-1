@@ -43,10 +43,11 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => playerGame.IsConfirmed)
-            </dd>
+                <input @(playerGame.IsConfirmed ? "checked=\"checked\"" : "") id="@("checkBox_" + playerGame.GameId)" class="check-box" disabled="disabled" type="checkbox">
+                @*@Html.DisplayFor(model => playerGame.IsConfirmed, new { @id = "checkBox_" + playerGame.GameId })*@
+                </dd>
         }
 
-
     </dl>
+
 </div>

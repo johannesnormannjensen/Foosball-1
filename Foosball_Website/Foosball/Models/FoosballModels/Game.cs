@@ -19,5 +19,14 @@ namespace Foosball.Models.FoosballModels
         {
             PlayerGames = PlayerGames ?? new List<PlayerGame>() { };
         }
+
+        public bool HasThisPlayer(Player player)
+        {
+            return PlayerGames.Any(x => x.PlayerId == player.Id);
+        }
+        public void PlayerConfirm(Player player)
+        {
+             PlayerGames.First(x => x.PlayerId == player.Id).IsConfirmed = true;
+        }
     }
 }
