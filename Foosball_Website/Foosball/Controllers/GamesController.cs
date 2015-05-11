@@ -55,24 +55,26 @@ namespace Foosball.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,LocationId,Date,Playergames,Playergame.IsConfirmed")]Game game)
+        public ActionResult Create([Bind(Include = "Id,LocationId,Date,Playergames")] Game game)
         {
-
+            
             Player loggedInPlayer = LoggedInPlayer();
-            foreach (PlayerGame playerGame in game.PlayerGames)
+            if (game.PlayerGames.Count(x => x.PlayerId == loggedInPlayer.Id)==1)
             {
-                playerGame.IsConfirmed = playerGame.PlayerId == loggedInPlayer.Id;
+                foreach (PlayerGame playerGame in game.PlayerGames)
+                {
+                    playerGame.IsConfirmed = playerGame.PlayerId == loggedInPlayer.Id ? true : (bool?)null;
+                }
+                game.Date = DateTime.Now;
+                if (ModelState.IsValid)
+                {
+                    db.Games.Add(game);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(game);
             }
-            game.Date = DateTime.Now;
-            if (ModelState.IsValid)
-            {
-                db.Games.Add(game);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            //  ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name", game.LocationId);
-            return View(game);
+            return RedirectToAction("Create");
         }
 
 

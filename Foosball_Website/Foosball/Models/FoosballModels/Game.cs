@@ -10,7 +10,7 @@ namespace Foosball.Models.FoosballModels
         public int Id { get; set; }
         public int LocationId { get; set; }
         public DateTime Date { get; set; }
-        public bool IsConfirmed() { return PlayerGames.All(x => x.IsConfirmed); }
+        public bool IsConfirmed() { return PlayerGames.All(x => x.IsConfirmed != null && (bool) x.IsConfirmed); }
 
         public virtual Location Location { get; set; }
         public virtual ICollection<PlayerGame> PlayerGames { get; set; }

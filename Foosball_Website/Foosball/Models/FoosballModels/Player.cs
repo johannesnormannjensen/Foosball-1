@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Foosball.Models.FoosballModels
 {
@@ -7,6 +8,8 @@ namespace Foosball.Models.FoosballModels
     {
         public int Id { get; set; }
         public int Elo { get; set; }
+
+        [Required]
         public string Username { get; set; }
 
         public string ApplicationUserId { get; set; }

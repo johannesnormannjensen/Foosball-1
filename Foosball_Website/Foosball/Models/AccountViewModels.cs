@@ -81,12 +81,6 @@ namespace Foosball.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        /* private Player _player;
-         public Player Player
-         {
-             get { return _player ?? new Player(); }
-             set { _player = value; }
-         }*/
 
         public Player Player { get; set; }
 
