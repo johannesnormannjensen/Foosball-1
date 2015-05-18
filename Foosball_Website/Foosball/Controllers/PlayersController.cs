@@ -1,9 +1,12 @@
-﻿using System.Data.Entity;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Foosball.DAL;
 using Foosball.Models.FoosballModels;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 
 namespace Foosball.Controllers
@@ -17,7 +20,11 @@ namespace Foosball.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            return View(db.Players.ToList());
+            var players = db.Players.ToList();
+
+            var sortedPlayers = players.OrderByDescending(x => x.Elo);
+
+            return View(sortedPlayers);
         }
 
 
