@@ -9,7 +9,59 @@
 <h2>My Profile</h2>
 
 
-@foreach (PlayerGame playerGame in Model.PlayerGames)
-{
-    @Html.Partial("~/Views/Games/NakedGameDetails.cshtml", playerGame.Game)
+
+@{
+    foreach (PlayerGame playerGame in Model.PlayerGames)
+    {
+
+        string a = playerGame.IsConfirmed ? "confirmed" : "unconfirmed";
+
+        <h2 style="cursor: pointer"onclick="$('#div_@(playerGame.GameId)').toggle('fast');">Game  of &#9829;@(playerGame.Game.Location.Name)&#9829;</h2>
+        <div id="div_@(playerGame.GameId)" class="@(a)">
+            @Html.Partial("MyProfileGameLister", playerGame.Game)
+                <button id="@("btnConfirm_" + @playerGame.GameId)" value="@(playerGame.GameId)" onclick=" ajaxThing(this) " class="btn btn-success">Confirm</button>
+            </div>
+        
+    }
 }
+
+@section Scripts {
+    <script>
+
+        function ajaxThing(self) {
+
+            var x = self.value;
+            var data = { "gameId": x };
+
+            $.ajax({
+                type: 'POST',
+                url: "@Url.Action("Confirm", "Games")",
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                success: function (dataReturned) {
+                   if (dataReturned) {
+                        confirmSuccessful(x);
+                    }
+
+                },
+                error: function () {
+                    alert("error?");
+                }
+            }); //ajax call close
+        }
+        function confirmSuccessful(x) {
+            var k = "#checkBox_" + x;
+            $(k).prop("checked", true);
+            k = "#div_" + x;
+            $(k).hide("slow");
+            k = "#div_" + x;
+            $(k).removeClass("unconfirmed");
+            $(k).addClass("confirmed");
+        }
+
+
+    </script>
+}
+
+

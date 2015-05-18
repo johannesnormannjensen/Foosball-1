@@ -26,3 +26,9 @@ textarea {
 .details-username {
     font-weight: bold;
 }
+.confirmed {
+    background-color: #a1ff80;
+}
+.unconfirmed {
+    background-color: #ffa9a9;
+}

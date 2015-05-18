@@ -10,7 +10,7 @@ namespace Foosball.Models.FoosballModels
         public int Id { get; set; }
         public int LocationId { get; set; }
         public DateTime Date { get; set; }
-        public bool IsConfirmed() { return PlayerGames.All(x => x.IsConfirmed); }
+        public bool IsConfirmed() { return PlayerGames.All(x => x.IsConfirmed != null && (bool) x.IsConfirmed); }
 
         public virtual Location Location { get; set; }
         public virtual ICollection<PlayerGame> PlayerGames { get; set; }
@@ -18,6 +18,15 @@ namespace Foosball.Models.FoosballModels
         public Game()
         {
             PlayerGames = PlayerGames ?? new List<PlayerGame>() { };
+        }
+
+        public bool HasThisPlayer(Player player)
+        {
+            return PlayerGames.Any(x => x.PlayerId == player.Id);
+        }
+        public void PlayerConfirm(Player player)
+        {
+             PlayerGames.First(x => x.PlayerId == player.Id).IsConfirmed = true;
         }
     }
 }
