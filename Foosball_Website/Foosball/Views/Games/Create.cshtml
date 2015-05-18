@@ -12,8 +12,8 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
+    <!-- #region old-->
+    <div id="old" class="form-horizontal">
         <h4>Game</h4>
         <hr/>
         @Html.ValidationSummary(true, "", new {@class = "text-danger"})
@@ -40,7 +40,6 @@
             Model.PlayerGames = playerGames;@*needed for the checkboxbinding, see lower*@
             for (int i = 0; i < 4; i++)
             {
-
                 playerGames.Add(new PlayerGame());
                 <div class="form-group">
                     @Html.LabelFor(model => model.PlayerGames.First().Player.Username, htmlAttributes: new {@class = "control-label col-md-2"})
@@ -70,16 +69,142 @@
         </div>
     </div>
 
+    <!-- #endregion old-->
+
+    <div class="jumbotron">
+        <div class="row">
+
+            <ul id="winners" class="list-group col-xs-4">
+                <li class="list-group-item list-group-item-success">Winners <span id="winnersFull" class="glyphicon glyphicon-ok" aria-hidden="true" style="float:right"></span></li>
+            </ul>
+
+            <div id="i" class="list-group col-xs-4">
+
+                <h4 style="text-align: center">Player's Name</h4>
+                <input id="playername" class="col-xs-4 form-control" style="max-width: initial;" value="Bobby's mom">
+                <a id="winners-btn" class="btn btn-primary btn-insert col-xs-4" onclick=" addPlayer('#winners') "><<</a>
+                <div class="col-xs-4"></div>
+                <a id="losers-btn" class="btn btn-primary btn-insert col-xs-4" onclick=" addPlayer('#losers') ">>></a>
+            </div>
+
+            <ul id="losers" class="list-group col-xs-4">
+                <li class="list-group-item list-group-item-danger">Losers<span id="losersFull" class="glyphicon glyphicon-ok" aria-hidden="true" style="float:right"></span></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        var playerArray = @Html.Raw(Json.Encode(
+            ((IEnumerable<SelectListItem>)ViewBag.PlayerId).Select(player => new
+            {
+                id=player.Value,
+                name= player.Text
+            })
+        ));
+        var arr = playerArray.map(function(x) { return x.name; });
+
+        var dic = [];
+
+        function pageInit() {
+            $("#old").hide();
+            $( "#playername" ).autocomplete({
+                source: arr
+            });
+            //Counters for the player list
+            dic["#winners"] = 0;
+            dic["#losers"] = 0;
+
+            $("#winnersFull").hide();
+            $("#losersFull").hide();
+        }
+
+        pageInit();
+
+        function addPlayer(boxId)
+        {
+            if($.inArray($("#playername").val(), arr)===-1)
+            {
+                alert('Player Not found');
+                return;
+            }
+
+            if (listIsFull(boxId)) { alert('The list seems to be full'); return;}
+
+
+            var player = playerArray[getPlayerObjId($("#playername").val())];
+
+            $(boxId).append(generateListItemWithPlayerId(player.id));
+
+            $("#li_" + player.id).hide();
+            $("#li_" + player.id).slideDown("normal");
+
+            //remove player from autocomplete list
+            var ind = arr.indexOf($("#playername").val());
+            if(ind != -1) {
+                arr.splice(ind, 1);
+            }
+
+            $("#playername").val('');
+
+            //Count the players in each
+            dic[boxId]++;
+            listIsFull(boxId);
+
+        }
+
+        function listIsFull(boxId) {
+            if (dic[boxId] === 2) {
+                deactivateBox(boxId);
+                return true;
+            }
+            return false;
+        }
+
+
+        function deactivateBox(boxId)
+        {
+            $(boxId + "-btn").attr("disabled", true);
+            $(boxId + "Full").show("normal");
+
+        }
+        function reactivate(boxId)
+        {
+            $(boxId + "-btn").attr("disabled", false);
+            $(boxId + "Full").hide("normal");
+        }
+        function getPlayerObjId(playerName) {
+            for (var i=0; i< playerArray.length;i++)
+                if (playerArray[i].name === playerName) {
+                    return i;}
+        }
+        function generateListItemWithPlayerId(liId) { return '<li id=li_' + liId + ' class="list-group-item">' + $("#playername").val() + generateIcon(liId) + '</li>'; }
+        function generateIcon(iId){return '<i id=i_' + iId + ' class="glyphicon glyphicon-remove-circle pull-right" onclick="deletePlayer(this)" style="font-size: 1.4em; cursor:pointer;"></i>';
+        }
+
+        function deletePlayer(self) {
+            var boxId = "#" + $(self).parent().parent().attr('id');
+            dic[boxId]--;
+            reactivate(boxId);
+            var a = $('#l' + $(self).attr('id'));
+            arr.push(a.text());
+            a.slideUp("normal", function() { $(this).remove(); } );
+        }
+        function removeItem() {
+        }
+    </script>
+
 
 
 }
 
-        <div>
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-            @*initialized in bundleconfig.cs, this bundle contains the js file that is responsible
-                for renaming the dropdownlists for the purpose of binding*@
-        }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+}
