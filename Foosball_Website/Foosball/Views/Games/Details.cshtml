@@ -46,11 +46,11 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => playerGame.IsYourMom)
+                @Html.DisplayNameFor(model => playerGame.IsWin)
             </dt>
 
             <dd>
-                <input @(playerGame.IsYourMom ? "checked=\"checked\"" : "") id="@("checkBox_" + playerGame.GameId)" class="check-box" disabled="disabled" type="checkbox">
+                <input @(playerGame.IsWin ? "checked=\"checked\"" : "") id="@("checkBox_" + playerGame.GameId)" class="check-box" disabled="disabled" type="checkbox">
                 @*@Html.DisplayFor(model => playerGame.IsYourMom, new { @id = "checkBox_" + playerGame.GameId })*@
             </dd>
         }

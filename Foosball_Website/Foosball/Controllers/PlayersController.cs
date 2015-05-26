@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -17,6 +18,8 @@ namespace Foosball.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            List<Player> playersSorted = db.Players.ToList().Where(x=>x.PlayerGames.Count>0).OrderByDescending(x => x.Elo).ToList();
+            List<bool> pgs = new List<bool>(playersSorted.Select(x => x.PlayerGames.Last().IsWin));
             return View(db.Players.ToList());
         }
 

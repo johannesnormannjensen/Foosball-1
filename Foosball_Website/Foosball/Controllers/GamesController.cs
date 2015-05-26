@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Foosball.DAL;
 using Foosball.Models.FoosballModels;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 
 namespace Foosball.Controllers
@@ -45,8 +46,7 @@ namespace Foosball.Controllers
         {
             ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
             ViewBag.PlayerId = new SelectList(db.Players, "Id", "Username");
-            var game = new Game();
-            return View(game);
+            return View();
         }
 
         // POST: Games/Create
@@ -57,13 +57,28 @@ namespace Foosball.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,LocationId,Date,Playergames")] Game game)
         {
-            
+            game.LocationId = 4;
+            string sds = Request.Form["winners_1"];
+            int[] ids =
+                new string[]
+                {
+                    Request.Form["winners_0"],
+                    Request.Form["winners_1"],
+                    Request.Form["losers_0"],
+                    Request.Form["losers_1"]
+                }.Where(x=> x!=null).Select(Int32.Parse).ToArray();
             Player loggedInPlayer = LoggedInPlayer();
+            game.PlayerGames =  new List<PlayerGame>() { };
+            foreach (int t in ids)
+            {
+                game.PlayerGames.Add(new PlayerGame{PlayerId= t, Game=game});
+            }
             if (game.PlayerGames.Count(x => x.PlayerId == loggedInPlayer.Id)==1)
             {
+
                 foreach (PlayerGame playerGame in game.PlayerGames)
                 {
-                    playerGame.IsConfirmed = playerGame.PlayerId == loggedInPlayer.Id ? true : (bool?)null;
+                    playerGame.IsConfirmed = playerGame.PlayerId == loggedInPlayer.Id ? true : false;
                 }
                 game.Date = DateTime.Now;
                 if (ModelState.IsValid)

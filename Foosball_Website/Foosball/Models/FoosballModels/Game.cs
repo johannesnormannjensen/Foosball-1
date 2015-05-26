@@ -17,7 +17,6 @@ namespace Foosball.Models.FoosballModels
 
         public Game()
         {
-            PlayerGames = PlayerGames ?? new List<PlayerGame>() { };
         }
 
         public bool HasThisPlayer(Player player)
