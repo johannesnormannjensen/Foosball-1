@@ -24,6 +24,19 @@ namespace Foosball.Controllers
 
             var sortedPlayers = players.OrderByDescending(x => x.Elo);
 
+            ViewBag.gwl = new SelectList(sortedPlayers.Select(x => x.PlayerGames.Last().Game), "IsWin");
+            return View(sortedPlayers);
+        }
+
+        // GET: Players
+        [AllowAnonymous]
+        public ActionResult List()
+        {
+            var players = db.Players.ToList();
+
+            var sortedPlayers = players.OrderByDescending(x => x.Elo);
+
+            ViewBag.gwl = new SelectList(sortedPlayers.Select(x => x.PlayerGames.Last().Game), "IsWin");
             return View(sortedPlayers);
         }
 

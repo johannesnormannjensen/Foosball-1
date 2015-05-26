@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<Foosball.Models.FoosballModels.Player>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Highscore";
 }
 
-<h2>Index</h2>
+<h2>Highscore</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table table-hover">
     <tr class="success">
         <th>
@@ -29,14 +26,13 @@
         <th></th>
     </tr>
     @{
-        var i = 0;
-
-        foreach (var item in Model)
+        SelectList winloseList = ViewBag.gwl;
+        for(var i=0;i<Model.ToList().Count;i++)
         {
-            i++;
+            var item = Model.ToList()[i];
             <tr>
                 <td>
-                    @i
+                    @(i+1)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Elo)
@@ -45,7 +41,15 @@
                     @Html.DisplayFor(modelItem => item.Username)
                 </td>
                 <td>
-                    <label class="label label-danger">Lost</label>
+                    @if (item.PlayerGames.Last().IsWin)
+                    {
+                        <label class="label label-success">Won</label>
+                    }
+                    else
+                    {
+                        <label class="label label-danger">Lost</label>
+                    }
+                    
                 </td>
                 @*<td>
                     @Html.DisplayFor(modelItem => item.ApplicationUserId)
