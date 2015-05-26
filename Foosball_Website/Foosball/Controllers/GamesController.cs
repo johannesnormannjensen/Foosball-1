@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Foosball.DAL;
 using Foosball.Models.FoosballModels;
+using Microsoft.Ajax.Utilities;
+using Microsoft.AspNet.Identity;
 
 namespace Foosball.Controllers
 {
@@ -39,32 +41,60 @@ namespace Foosball.Controllers
         }
 
         // GET: Games/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
             ViewBag.PlayerId = new SelectList(db.Players, "Id", "Username");
-            var game = new Game();
-            return View(game);
+            return View();
         }
 
         // POST: Games/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Game game)
+        public ActionResult Create([Bind(Include = "Id,LocationId,Date,Playergames")] Game game)
         {
-            game.Date = DateTime.Now;
-            if (ModelState.IsValid)
+            game.LocationId = 4;
+            string sds = Request.Form["winners_1"];
+            int[] ids =
+                new string[]
+                {
+                    Request.Form["winners_0"],
+                    Request.Form["winners_1"],
+                    Request.Form["losers_0"],
+                    Request.Form["losers_1"]
+                }.Where(x => x != null).Select(Int32.Parse).ToArray();
+            Player loggedInPlayer = LoggedInPlayer();
+            game.PlayerGames = new List<PlayerGame>() { };
+
+            for (int i = 0; i < ids.Length; i++)
             {
-                db.Games.Add(game);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                game.PlayerGames.Add(new PlayerGame { PlayerId = ids[i], Game = game, IsWin = i < ids.Length / 2 });
             }
 
-            ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name", game.LocationId);
-            return View(game);
+            if (game.PlayerGames.Count(x => x.PlayerId == loggedInPlayer.Id) == 1)
+            {
+
+                foreach (PlayerGame playerGame in game.PlayerGames)
+                {
+                    playerGame.IsConfirmed = playerGame.PlayerId == loggedInPlayer.Id ? true : false;
+                }
+                game.Date = DateTime.Now;
+                if (ModelState.IsValid)
+                {
+                    db.Games.Add(game);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(game);
+            }
+            return RedirectToAction("Create");
         }
+
+
 
         // GET: Games/Edit/5
         public ActionResult Edit(int? id)
@@ -124,6 +154,21 @@ namespace Foosball.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public JsonResult Confirm(int gameId)
+        {
+            Game game = db.Games.ToList().First(x => x.Id == gameId);
+            if (ModelState.IsValid && game.HasThisPlayer(LoggedInPlayer()))
+            {
+                game.PlayerConfirm(LoggedInPlayer());
+                db.SaveChanges();
+                return Json(true);
+            }
+
+            return Json(false);
+        }
 
         protected override void Dispose(bool disposing)
         {
@@ -132,6 +177,15 @@ namespace Foosball.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private bool isUserThisPlayer(Player p)
+        {
+            return p.ApplicationUserId == User.Identity.GetUserId();
+        }
+        private Player LoggedInPlayer()
+        {
+            return db.Players.ToList().First(x => x.ApplicationUserId == User.Identity.GetUserId());
         }
     }
 }

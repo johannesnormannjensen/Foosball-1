@@ -26,3 +26,11 @@ textarea {
 .details-username {
     font-weight: bold;
 }
+.confirmed {
+    background-color: #a1ff80;
+}
+.btn-insert{
+    margin-top: 10px;
+}
+.ui-autocomplete{ list-style-type: none; padding: 5px}
+

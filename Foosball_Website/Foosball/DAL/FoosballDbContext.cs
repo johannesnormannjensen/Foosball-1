@@ -40,5 +40,6 @@ namespace Foosball.DAL
                 .WithRequired()
                 .HasForeignKey(c => c.GameId);
         }
+
     }
 }

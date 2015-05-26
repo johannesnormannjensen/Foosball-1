@@ -7,7 +7,58 @@
 
 <h2>Details</h2>
 
-@Html.Partial("NakedGameDetails")
+<div>
+    <h4>Game</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        @foreach (PlayerGame playerGame in Model.PlayerGames)
+        {
+            <dt class="details-username">
+                @Html.DisplayNameFor(model => playerGame.Player.Username)
+            </dt>
+
+            string style = playerGame.IsWin ? "text-success" : "text-danger";
+            <dd class="details-username @style">
+                @Html.DisplayFor(model => playerGame.Player.Username)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => playerGame.Player.Elo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => playerGame.Player.Elo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => playerGame.IsWin)
+            </dt>
+
+            <dd>
+                <input @(playerGame.IsWin ? "checked=\"checked\"" : "") id="@("checkBox_" + playerGame.GameId)" class="check-box" disabled="disabled" type="checkbox">
+                @*@Html.DisplayFor(model => playerGame.IsYourMom, new { @id = "checkBox_" + playerGame.GameId })*@
+            </dd>
+        }
+
+    </dl>
+
+</div>
+
 <script>
     function dontrun() {
         var date = new Date();
