@@ -66,14 +66,16 @@ namespace Foosball.Controllers
                     Request.Form["winners_1"],
                     Request.Form["losers_0"],
                     Request.Form["losers_1"]
-                }.Where(x=> x!=null).Select(Int32.Parse).ToArray();
+                }.Where(x => x != null).Select(Int32.Parse).ToArray();
             Player loggedInPlayer = LoggedInPlayer();
-            game.PlayerGames =  new List<PlayerGame>() { };
-            foreach (int t in ids)
+            game.PlayerGames = new List<PlayerGame>() { };
+
+            for (int i = 0; i < ids.Length; i++)
             {
-                game.PlayerGames.Add(new PlayerGame{PlayerId= t, Game=game});
+                game.PlayerGames.Add(new PlayerGame { PlayerId = ids[i], Game = game, IsWin = i < ids.Length / 2 });
             }
-            if (game.PlayerGames.Count(x => x.PlayerId == loggedInPlayer.Id)==1)
+
+            if (game.PlayerGames.Count(x => x.PlayerId == loggedInPlayer.Id) == 1)
             {
 
                 foreach (PlayerGame playerGame in game.PlayerGames)

@@ -218,3 +218,5 @@ E:\GitProjects\Foosball\Foosball_Website\Foosball\obj\Debug\Foosball.dll
 E:\GitProjects\Foosball\Foosball_Website\Foosball\obj\Debug\Foosball.pdb
 E:\GitProjects\Foosball\Foosball_Website\Foosball\bin\Microsoft.AspNet.Identity.Core.dll
 E:\GitProjects\Foosball\Foosball_Website\Foosball\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\GitProjects\Foosball\Foosball_Website\Foosball\obj\Debug\Foosball.Migrations.FirstMigration.resources
+E:\GitProjects\Foosball\Foosball_Website\Foosball\obj\Debug\Foosball.csproj.GenerateResource.Cache
