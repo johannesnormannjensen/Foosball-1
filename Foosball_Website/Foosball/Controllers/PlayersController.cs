@@ -86,7 +86,26 @@ namespace Foosball.Controllers
         public ActionResult MyProfile()
         {
             Player p = db.Players.ToList().First(x => x.ApplicationUserId == User.Identity.GetUserId());
-              
+            var userId = User.Identity.GetUserId();
+            Player player = db.Players.SingleOrDefault(x => x.ApplicationUserId==userId);
+
+            int[] gwl = {0,0,0};
+            foreach (var game in player.PlayerGames)
+            {
+                gwl[0]++;
+                if (game.IsWin)
+                {
+                    gwl[1]++;
+                }
+                else
+                {
+                    gwl[2]++;
+                }
+            }
+
+            ViewBag.player = player;
+            ViewBag.gwl = gwl;
+
             return View(p);
         }
 

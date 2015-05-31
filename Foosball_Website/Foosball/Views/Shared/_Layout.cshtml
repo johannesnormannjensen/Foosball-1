@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Foosball</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
 </head>
 <body>
@@ -19,13 +23,14 @@
             <ul class="sidebar-nav">
                 <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
                 <li class="sidebar-brand">
-                    @Html.ActionLink("Foosball", "Index", "Players",null)
+                    @Html.ActionLink("Foosball", "Index", "Players")
                 </li>
                 <li class="sidebar-brand white-text">
                     Hello @Html.Raw(User.Identity.GetUserName())!;
                 </li>
                 <li>@Html.ActionLink("Highscores", "Index", "Players")</li>
                 <li>@Html.ActionLink("My Profile", "MyProfile", "Players")</li>
+                <li>@Html.ActionLink("Create game", "Create", "Games")</li>
                 <li>@Html.ActionLink("Player List", "ListPlayers", "Players")</li>
                 <li>@Html.ActionLink("About", "About", "Home")</li>
 
@@ -68,9 +73,7 @@
     </footer>
 
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    
     <script>
     // Closes the sidebar menu
     $("#menu-close").click(function (e) {

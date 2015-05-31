@@ -29,6 +29,7 @@ body {
 }
 
 .jumbo-marpad {
+    max-width: 1350px;
     padding: 50px 50px;
     margin: 80px 80px;
 }

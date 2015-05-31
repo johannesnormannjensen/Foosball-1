@@ -5,74 +5,16 @@
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>Create</h2>
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/jqueryval")
 
 
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
-    <!-- #region old-->
-    /*
-    <div id="old" class="form-horizontal">
-        <h4>Game</h4>
-        <hr/>
-        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-        <div class="form-group">
-            @Html.LabelFor(model => model.LocationId, "LocationId", htmlAttributes: new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.DropDownList("LocationId", null, htmlAttributes: new {@class = "form-control"})
-                @Html.ValidationMessageFor(model => model.LocationId, "", new {@class = "text-danger"})
-            </div>
-        </div>
+    <div class="jumbotron jumbo-marpad">
+        <h2>Create game</h2>
+        @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Date, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.Date, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        @{
-            SelectList sl = ViewBag.HumanSelection;
-
-            List<PlayerGame> playerGames = new List<PlayerGame>();
-            Model.PlayerGames = playerGames;@*needed for the checkboxbinding, see lower*@
-            for (int i = 0; i < 4; i++)
-            {
-                playerGames.Add(new PlayerGame());
-                <div class="form-group">
-                    @Html.LabelFor(model => model.PlayerGames.First().Player.Username, htmlAttributes: new {@class = "control-label col-md-2"})
-                    <div class="col-md-8">
-                        @Html.DropDownListFor(x => ((List<PlayerGame>) x.PlayerGames)[i].PlayerId, (IEnumerable<SelectListItem>) ViewBag.PlayerId,
-                            new
-                            {
-                                Class = "form-control",
-                                Id = "PlayerGames[" + i + "].PlayerId",
-                                Name = "PlayerGames[" + i + "].PlayerId"
-                            })
-                        @*names all the lists PlayerId, but the first param is necessary so that it finds the list of players from the viewbag
-                    suggestions are welcomed for prettier solution*@
-                    </div>
-                    <div class="col-md-2">
-                        @Html.CheckBoxFor(model => playerGames[i].IsWin)@*keep in mind, that toList() loses the reference*@
-                    </div>
-                </div>
-            }
-        }
-
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default"/>
-            </div>
-        </div>
-    </div>
-    */
-    <!-- #endregion old-->
-
-    <div class="jumbotron">
         <div class="row">
 
             <ul id="winners" class="list-group col-xs-4">
@@ -82,7 +24,8 @@
             <div id="i" class="list-group col-xs-4">
 
                 <h4 style="text-align: center">Player's Name</h4>
-                <input id="playername" class="col-xs-4 form-control" style="max-width: initial;" value="Bobby's mom">
+                <input id="playername" class=" col-xs-4 form-control" style="max-width: initial;display:table;
+   margin:auto;" value="Bobby's mom">
                 <a id="winners-btn" class="btn btn-primary btn-insert col-xs-4" onclick="addPlayer('#winners') "><<</a>
                 <div class="col-xs-4"></div>
                 <a id="losers-btn" class="btn btn-primary btn-insert col-xs-4" onclick="addPlayer('#losers') ">>></a>
@@ -92,17 +35,18 @@
                 <li class="list-group-item list-group-item-danger">Losers<span id="losersFull" class="glyphicon glyphicon-ok" aria-hidden="true" style="float:right"></span></li>
             </ul>
         </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input id="submitBut" type="submit" value="Create" class="btn btn-default" disabled />
+
+        <div class="form-group">
+            <div class="text-center">
+                <input id="submitBut" type="submit" value="Create" class="btn btn-default" disabled/>
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back", "Index", "Home")
         </div>
     </div>
-
     <script>
-
-
         var playerArray = @Html.Raw(Json.Encode(
             ((IEnumerable<SelectListItem>)ViewBag.PlayerId).Select(player => new
             {
@@ -230,11 +174,3 @@
 
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/jqueryval")
-}
