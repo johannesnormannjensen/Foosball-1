@@ -84,3 +84,5 @@ C:\Foosball\Foosball_Website\Foosball.Tests\bin\Debug\Microsoft.Owin.Security.Co
 C:\Foosball\Foosball_Website\Foosball.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 C:\Foosball\Foosball_Website\Foosball.Tests\obj\Debug\Foosball.Tests.dll
 C:\Foosball\Foosball_Website\Foosball.Tests\obj\Debug\Foosball.Tests.pdb
+E:\GitProjects\Foosball\Foosball_Website\Foosball.Tests\bin\Debug\EntityFramework.SqlServer.dll
+E:\GitProjects\Foosball\Foosball_Website\Foosball.Tests\bin\Debug\EntityFramework.SqlServer.xml
