@@ -3,46 +3,48 @@
 @{
     ViewBag.Title = "Delete";
 }
+<div class="jumbotron jumbo-marpad">
+    <h2>Delete</h2>
 
-<h2>Delete</h2>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Player</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Elo)
+            </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Player</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Elo)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Elo)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Elo)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Username)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Username)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ApplicationUserId)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplicationUserId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ApplicationUserId)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ApplicationUserId)
-        </dd>
+        </dl>
 
-    </dl>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
 </div>

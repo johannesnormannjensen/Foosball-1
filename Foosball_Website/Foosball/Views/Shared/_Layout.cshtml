@@ -1,54 +1,92 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Foosball</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/themes/base/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/jqueryui")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<header>
+    @if (Request.IsAuthenticated)
+    {
+        <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+                <li class="sidebar-brand">
+                    @Html.ActionLink("Foosball", "Index", "Players",null)
+                </li>
+                <li class="sidebar-brand white-text">
+                    Hello @Html.Raw(User.Identity.GetUserName())!;
+                </li>
+                <li>@Html.ActionLink("Highscores", "Index", "Players")</li>
+                <li>@Html.ActionLink("My Profile", "MyProfile", "Players")</li>
+                <li>@Html.ActionLink("Player List", "ListPlayers", "Players")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+
+
+
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                }
+            </ul>
+        </nav>
+    }
+    @RenderBody()
+</header>
+    <hr />
+    <footer>
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("My Profile", "MyProfile", "Players")</li>
-                    <li>@Html.ActionLink("Create Game", "Create", "Games")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+            <div class="row indexrow">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4>
+                        <strong>KEA Foosball</strong>
+                    </h4>
+
+                    <p>K&oslash;benhavn NV<br>Lygten, 37 & 16</p>
+                    <ul class="list-unstyled">
+
+                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a></li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    </footer>
 
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+
+    </script>
+
 </body>
 </html>

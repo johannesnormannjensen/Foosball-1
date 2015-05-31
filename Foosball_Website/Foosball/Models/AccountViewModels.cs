@@ -51,7 +51,6 @@ namespace Foosball.Models
     {
         [Required]
         [Display(Name = "Email")]
-        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
@@ -65,6 +64,12 @@ namespace Foosball.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [StringLength(12, MinimumLength = 4)]
+        [RegularExpression(@"(\S)+", ErrorMessage = "White space is not allowed")]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

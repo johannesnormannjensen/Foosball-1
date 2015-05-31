@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Foosball.Models.FoosballModels.Player>
+
+@{
+    ViewBag.Title = "ListPlayers";
+}
+<div class="jumbotron jumbo-marpad">
+
+    <h2>Player List</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Elo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+@*            <th>*@
+@*                @Html.DisplayNameFor(model => model.ApplicationUserId)*@
+@*            </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Elo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+@*                <td>*@
+@*                    @Html.DisplayFor(modelItem => item.ApplicationUserId)*@
+@*                </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { returnUrl = Request.Url }, new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
