@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using System.Web.UI;
 using Foosball.DAL;
 using Foosball.Models.FoosballModels;
 using Microsoft.AspNet.Identity;
@@ -17,6 +18,17 @@ namespace Foosball.Controllers
         // GET: Players
         [AllowAnonymous]
         public ActionResult Index()
+        {
+            var players = db.Players.ToList();
+
+            var sortedPlayers = players.OrderByDescending(x => x.Elo); 
+
+            return View(sortedPlayers);
+        }
+
+        // GET: Players
+        [AllowAnonymous]
+        public ActionResult ListPlayers()
         {
             List<Player> playersSorted = db.Players.ToList().Where(x=>x.PlayerGames.Count>0).OrderByDescending(x => x.Elo).ToList();
             List<bool> pgs = new List<bool>(playersSorted.Select(x => x.PlayerGames.Last().IsWin));
