@@ -23,23 +23,41 @@
             <ul class="sidebar-nav">
                 <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
                 <li class="sidebar-brand">
-                    @Html.ActionLink("Foosball", "Index", "Players")
+                    <h2>@Html.ActionLink("Foosball", "Index", "Players")</h2>
                 </li>
-                <li class="sidebar-brand white-text">
-                    Hello @Html.Raw(User.Identity.GetUserName())!;
+                <li class="sidebar-brand list-separator white-text">
+                    <h3>Hello @Html.Raw(User.Identity.GetUserName())!;</h3>
                 </li>
-                <li>@Html.ActionLink("Highscores", "Index", "Players")</li>
-                <li>@Html.ActionLink("My Profile", "MyProfile", "Players")</li>
-                <li>@Html.ActionLink("Create game", "Create", "Games")</li>
-@*                <li>@Html.ActionLink("Player List", "ListPlayers", "Players")</li>*@
-                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li class="list-separator">
+                    <a href="@Url.Action("Index", "Players")">
+                        <span class="fa fa-trophy fa-2x" />
+                        Highscores
+                    </a>
+                </li>
+                <li class="list-separator">
+                    <a href="@Url.Action("MyProfile", "Players")">
+                        <span class="fa fa-user fa-2x" />
+                        My profile
+                    </a>
+                </li>
+                <li class="list-separator">
+                    <a href="@Url.Action("Create", "Games")">
+                        <span class="fa fa-futbol-o fa-2x" />
+                        Create game
+                    </a>
+                </li>
+                <li>
+                    
+                </li>
+                @*                <li>@Html.ActionLink("Player List", "ListPlayers", "Players")</li>*@
+                @*                <li>@Html.ActionLink("About", "About", "Home")</li>*@
 
 
 
                 @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                 {
                     @Html.AntiForgeryToken()
-                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()"><span class="fa fa-sign-out fa-2x" />Log off</a></li>
                 }
             </ul>
         </nav>
@@ -52,14 +70,14 @@
             <div class="row indexrow">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4>
-                        <strong>KEA Foosball</strong>
+                        <strong>2015 KEA Foosball</strong>
                     </h4>
 
                     <p>K&oslash;benhavn NV<br>Lygten, 37 & 16</p>
                     <ul class="list-unstyled">
 
                         <li><i class="fa fa-phone fa-fw"></i> +45 12345678</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:keafoosball@kea.dk">name@example.com</a></li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:keafoosball@kea.dk">keafoosball@kea.dk</a></li>
                     </ul>
                     <br>
                     <ul class="list-inline">

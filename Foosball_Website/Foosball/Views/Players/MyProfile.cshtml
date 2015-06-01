@@ -62,7 +62,7 @@
 
                 string a = playerGame.IsConfirmed ? "confirmed" : "unconfirmed";
 
-                <h2 style="cursor: pointer" onclick=" $('#div_@(playerGame.GameId)').toggle('fast'); ">Game of &#9829;@(playerGame.Game.Location.Name)&#9829;</h2>
+                <h2 style="cursor: pointer" onclick=" $('#div_@(playerGame.GameId)').toggle('fast'); ">Game played at @(playerGame.Game.Location.Name)</h2>
                 <div id="div_@(playerGame.GameId)" class="@(a)">
                     @Html.Partial("MyProfileGameLister", playerGame.Game)
                     @if (!@playerGame.IsConfirmed)
