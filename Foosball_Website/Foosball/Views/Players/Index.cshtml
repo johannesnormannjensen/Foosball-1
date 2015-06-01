@@ -64,18 +64,7 @@
                             @Html.DisplayFor(modelItem => item.ApplicationUserId)
                         </td>*@
                     <td>
-                        @if (User.IsInRole("Administrators"))
-                        {
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
-                            @Html.TextArea(" |")
-                        }
                         @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-sm btn-default" })
-                        @if (User.IsInRole("Administrators"))
-                        {
-                            @Html.TextArea(" |")
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-danger" })
-                        }
-
                     </td>
                 </tr>
             }

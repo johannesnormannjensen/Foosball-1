@@ -47,7 +47,7 @@
         </dt>
 
         <dd>
-            @Html.CheckBoxFor(model => playerGame.IsConfirmed, new { @id = "checkBox_" + playerGame.GameId })
+            @Html.CheckBoxFor(model => playerGame.IsConfirmed, new { @id = "checkBox_" + playerGame.GameId, @disabled = "disabled" })
         </dd>
     }
 

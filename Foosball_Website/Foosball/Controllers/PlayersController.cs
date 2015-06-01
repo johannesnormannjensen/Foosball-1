@@ -55,6 +55,7 @@ namespace Foosball.Controllers
         }
 
         // GET: Players/Create
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             return View();
@@ -65,6 +66,7 @@ namespace Foosball.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create([Bind(Include = "Id,Elo,Username")] Player player)
         {
 
@@ -90,20 +92,24 @@ namespace Foosball.Controllers
             Player player = db.Players.SingleOrDefault(x => x.ApplicationUserId==userId);
 
             int[] gwl = {0,0,0};
-            foreach (var game in player.PlayerGames)
+            if (player != null)
             {
-                gwl[0]++;
-                if (game.IsWin)
+                foreach (var playergame in player.PlayerGames)
                 {
-                    gwl[1]++;
+                    if (!playergame.Game.IsConfirmed()) continue;
+                    gwl[0]++;
+                    if (playergame.IsWin)
+                    {
+                        gwl[1]++;
+                    }
+                    else
+                    {
+                        gwl[2]++;
+                    }
                 }
-                else
-                {
-                    gwl[2]++;
-                }
-            }
 
-            ViewBag.player = player;
+                ViewBag.player = player;
+            }
             ViewBag.gwl = gwl;
 
             return View(p);
