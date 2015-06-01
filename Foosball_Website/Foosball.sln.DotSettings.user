@@ -1,4 +1,8 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Foosball\Foosball_Website\packages\WebGrease.1.5.2\lib\WebGrease.dll" /&gt;&#xD;
-&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=AF2F3656F6C741EC91891BEB12C213A2/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=AF2F3656F6C741EC91891BEB12C213A2/GroupingIndex/@EntryValue">4</s:Int64>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=AF2F3656F6C741EC91891BEB12C213A2/Name/@EntryValue">TestWinLowChance</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=AF2F3656F6C741EC91891BEB12C213A2/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;e Id="Foosball.Tests.Models.PlayerTest.TestWinLowChance" Project="8F5F1501-56E1-45CA-8A4E-160B6D717971" Provider="MSTest" /&gt;&lt;e Id="Foosball.Tests.Models.PlayerTest" Project="8F5F1501-56E1-45CA-8A4E-160B6D717971" Provider="MSTest" /&gt;&lt;/Session&gt;</s:String></wpf:ResourceDictionary>
