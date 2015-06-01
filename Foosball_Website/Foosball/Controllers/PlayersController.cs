@@ -134,11 +134,14 @@ namespace Foosball.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Elo,Username,ApplicationUserId")] Player player)
+        public ActionResult Edit([Bind(Include = "Username")] Player player)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(player).State = EntityState.Modified;
+                Player p = db.Players.ToList().First(x => x.ApplicationUserId == User.Identity.GetUserId());
+                p.Username = player.Username;
+                player = p;
+                db.Entry(p).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
