@@ -1,24 +1,18 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div class="text-vertical-center">
+    <h1>KEA Foosball</h1>
 
-<header>
-    <div class="text-vertical-center">
-        <h1>KEA Foosball</h1>
-
-        <h3>Claim the top of the highscore!</h3>
-        <br>
-        @if(!Request.IsAuthenticated)
-        {
+    <h3>Claim the top of the highscore!</h3>
+    <br>
+    @if (!Request.IsAuthenticated)
+    {
         <a href="#" class="btn btn-light btn-lg" data-toggle="modal" data-target="#loginModal">Log in</a>
         <a href="#" id="regModal" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#registerModal">Register</a>
-        }
-        
-    </div>
+    }
 
-    @*@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
-        @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })*@
-
+</div>
     <!-- Login Modal -->
     <div class="modal fade hidescroll" id="loginModal" role="dialog" aria-labelledby="logModalLabel"
          aria-hidden="true">
@@ -38,8 +32,6 @@
             </div>
         </div>
     </div>
-
-</header>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
