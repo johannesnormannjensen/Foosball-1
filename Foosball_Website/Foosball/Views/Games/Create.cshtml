@@ -25,7 +25,7 @@
 
                 <h4 style="text-align: center">Player's Name</h4>
                 <input id="playername" class=" col-xs-4 form-control" style="max-width: initial;display:table;
-   margin:auto;" value="Bobby's mom">
+   margin:auto;" value="@ViewBag.un">
                 <a id="winners-btn" class="btn btn-primary btn-insert col-xs-4" onclick="addPlayer('#winners') "><<</a>
                 <div class="col-xs-4"></div>
                 <a id="losers-btn" class="btn btn-primary btn-insert col-xs-4" onclick="addPlayer('#losers') ">>></a>
@@ -99,8 +99,10 @@
 
         pageInit();
 
+
         function addPlayer(boxId)
         {
+            //if the playername isn't in the array the return index is -1.
             if($.inArray($("#playername").val(), arr)===-1)
             {
                 alert('Player Not found');
@@ -132,6 +134,7 @@
 
         }
 
+        //checks if the list of losers/players is full and deactivates it
         function listIsFull(boxId) {
             if (dic[boxId] === 2) {
                 deactivateBox(boxId);
@@ -157,14 +160,17 @@
                 if (playerArray[i].name === playerName) {
                     return i;}
         }
+        //list-item factory, creates a player-item for list
         function generateListItemWithPlayerId(liId, boxId) {
             var generateInputBox = function() { return '<input type="hidden" name="' + boxId.substring(1) + '_' + dic[boxId] + '" value="' + getPlayerIdByName($("#playername").val()) + '">'; }
             return '<li id=li_' + liId + ' class="list-group-item">' +generateInputBox(boxId) +$("#playername").val()+ generateIcon(liId) + '</li>';
         }
 
+        // remove-button factory for list-items
         function generateIcon(iId){return '<i id=i_' + iId + ' class="glyphicon glyphicon-remove-circle pull-right" onclick="deletePlayer(this)" style="font-size: 1.4em; cursor:pointer;"></i>';
         }
 
+        //removes a list-item from the winner/loser list and add the player back to the dictionary
         function deletePlayer(self) {
             var boxId = "#" + $(self).parent().parent().attr('id');
 
@@ -173,8 +179,6 @@
             var a = $('#l' + $(self).attr('id'));
             arr.push(a.text());
             a.slideUp("normal", function() { $(this).remove(); } );
-        }
-        function removeItem() {
         }
     </script>
 

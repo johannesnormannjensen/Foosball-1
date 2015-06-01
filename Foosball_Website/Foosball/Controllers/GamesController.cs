@@ -50,6 +50,10 @@ namespace Foosball.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            var userId = User.Identity.GetUserId();
+            Player player = db.Players.SingleOrDefault(x => x.ApplicationUserId == userId);
+
+            if (player != null) ViewBag.un = player.Username;
             ViewBag.LocationId = new SelectList(db.Locations, "Id", "Name");
             ViewBag.PlayerId = new SelectList(db.Players, "Id", "Username");
             return View();
