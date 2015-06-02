@@ -10,6 +10,9 @@ using Microsoft.AspNet.Identity;
 
 namespace Foosball.Controllers
 {
+//    Created by Ferenc, Edited by Johannes
+
+
     [Authorize]
     public class PlayersController : Controller
     {

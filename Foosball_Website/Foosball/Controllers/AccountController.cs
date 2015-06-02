@@ -147,7 +147,9 @@ namespace Foosball.Controllers
             return View(new RegisterViewModel());
         }
 
-        //
+
+        //Created by Ferenc Hammerl, Edited by Johannes Normann Jensen
+
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]

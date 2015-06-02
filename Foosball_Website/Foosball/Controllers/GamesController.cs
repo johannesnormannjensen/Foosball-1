@@ -13,6 +13,8 @@ using Microsoft.AspNet.Identity;
 
 namespace Foosball.Controllers
 {
+//    Created byt Ferenc Hammerl, Edited by Johannes
+
     public class GamesController : Controller
     {
         private FoosballDbContext db = new FoosballDbContext();

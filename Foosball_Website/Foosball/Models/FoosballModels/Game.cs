@@ -5,6 +5,8 @@ using System.Web.Razor.Text;
 
 namespace Foosball.Models.FoosballModels
 {
+//    Created byte Ferenc
+
     public class Game
     {
         public int Id { get; set; }

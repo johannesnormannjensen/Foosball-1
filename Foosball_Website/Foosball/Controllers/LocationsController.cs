@@ -11,6 +11,8 @@ using Foosball.Models.FoosballModels;
 
 namespace Foosball.Controllers
 {
+//    Created by Ferenc Hammerl
+
     public class LocationsController : Controller
     {
         private FoosballDbContext db = new FoosballDbContext();

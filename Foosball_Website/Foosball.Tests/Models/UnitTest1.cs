@@ -4,6 +4,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Foosball.Tests.Models
 {
+//    Created by Ferenc
+
     [TestClass]
     public class PlayerTest
     {

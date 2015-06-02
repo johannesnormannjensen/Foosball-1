@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Foosball.Models.FoosballModels
 {
+//    Created by Ferenc Hammerl
+
     public class Player
     {
         public const int K = 32;

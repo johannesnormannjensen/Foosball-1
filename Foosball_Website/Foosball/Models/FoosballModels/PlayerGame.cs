@@ -1,5 +1,7 @@
 ﻿namespace Foosball.Models.FoosballModels
 {
+//    Created byt Ferenc
+
     public class PlayerGame
     {
         public int PlayerId { get; set; }
